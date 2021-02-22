@@ -8,13 +8,15 @@ This is an addon for the Godot Engine that includes two shaders and one custom c
 
 The way I've constantly seen suggested of doing outlines in Godot is usually some variation of this: add an extra draw pass to a material that draws a slightly larger version of the object with frontface culling in a solid color. This works for a lot of cases, and is very easy to implement in Godot, but it has some limitations. The first of which is that depending on the model being used and how its normals are set up it can lead to artifacts, such as the ones shown in the image below, where the lines of the outline are not touching.
 
+Sometimes this can be worked around by using the `Create Outline Mesh...` option in the `MeshInstance` node, but this requires you to do this for every single asset that has issues and you will have to regenerate all of the outline meshes if you want to adjust the size of the outline. For large games with lots of assets this can become a problem and cost you time.
+
 ![Artifacts](https://github.com/jocamar/Godot-Post-Process-Outlines/blob/main/addons/jm_pp_outlines/graphics/artifacts.png?raw=true)
 
 Another issue it has is that non-uniformly scaled objects will have non-uniformly scaled outlines, which can be a problem. Additionally unless care is taken to account for this, objects far away will have smaller outlines than objects close by. This can be a problem if you always want an outline to be visible even when an object is far away.
 
 ![Artifacts](https://github.com/jocamar/Godot-Post-Process-Outlines/blob/main/addons/jm_pp_outlines/graphics/uneven_scaling.png?raw=true)
 
-The other main limitation of these kinds of techniques is that they don't allow you to show every kind of outline possible, for example the outlines around the green portion of the red cube in the picture below would not be possible without using a post processing technique. You can also see that the outlines have the same size, even in a non-uniformly scaled object, and there are no artifacts in the cube.
+The other main limitation of these kinds of techniques is that they don't allow you to show every kind of outline possible, for example the outlines around the green portion of the red cube in the picture below would not be possible without using a post processing technique or baking them into a texture. You can also see that the outlines have the same size, even in a non-uniformly scaled object, and there are no artifacts in the cube.
 
 ![Artifacts2](https://github.com/jocamar/Godot-Post-Process-Outlines/blob/main/addons/jm_pp_outlines/graphics/no_artifacts.png?raw=true)
 
