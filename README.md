@@ -12,11 +12,15 @@ Sometimes this can be worked around by using the `Create Outline Mesh...` option
 
 ![Artifacts](https://github.com/jocamar/Godot-Post-Process-Outlines/blob/main/addons/jm_pp_outlines/graphics/artifacts.png?raw=true)
 
-Another issue it has is that non-uniformly scaled objects will have non-uniformly scaled outlines, which can be a problem. Additionally unless care is taken to account for this, objects far away will have smaller outlines than objects close by. This can be a problem if you always want an outline to be visible even when an object is far away.
+Another issue this technique has is that non-uniformly scaled objects will have non-uniformly scaled outlines, which can be a problem. Additionally unless care is taken to account for this, objects far away will have smaller outlines than objects close by. This can be a problem if you always want an outline to be visible even when an object is far away.
 
 ![Artifacts](https://github.com/jocamar/Godot-Post-Process-Outlines/blob/main/addons/jm_pp_outlines/graphics/uneven_scaling.png?raw=true)
 
-The other main limitation of these kinds of techniques is that they don't allow you to show every kind of outline possible, for example the outlines around the green portion of the red cube in the picture below would not be possible without using a post-processing technique or baking them into a texture. You can also see that the outlines have the same size, even in a non-uniformly scaled object, and there are no artifacts in the cube.
+The other big limitation of these kinds of techniques is that they outright are not able to show certain kinds of outlines. For example the outlines around the green portion of the yellow cube in the picture below or around the top face of the cube would not be possible without using a post-processing technique or baking them into a texture.
+
+![example outlines](https://github.com/jocamar/Godot-Post-Process-Outlines/blob/main/addons/jm_pp_outlines/graphics/example.png?raw=true)
+
+You can also see that the post-process outlines have the same size regardless of distance from the observer (even in a non-uniformly scaled object) and there are no artifacts in the cube.
 
 ![Artifacts2](https://github.com/jocamar/Godot-Post-Process-Outlines/blob/main/addons/jm_pp_outlines/graphics/no_artifacts.png?raw=true)
 
