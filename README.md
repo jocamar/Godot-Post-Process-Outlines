@@ -16,11 +16,11 @@ Another issue it has is that non-uniformly scaled objects will have non-uniforml
 
 ![Artifacts](https://github.com/jocamar/Godot-Post-Process-Outlines/blob/main/addons/jm_pp_outlines/graphics/uneven_scaling.png?raw=true)
 
-The other main limitation of these kinds of techniques is that they don't allow you to show every kind of outline possible, for example the outlines around the green portion of the red cube in the picture below would not be possible without using a post processing technique or baking them into a texture. You can also see that the outlines have the same size, even in a non-uniformly scaled object, and there are no artifacts in the cube.
+The other main limitation of these kinds of techniques is that they don't allow you to show every kind of outline possible, for example the outlines around the green portion of the red cube in the picture below would not be possible without using a post-processing technique or baking them into a texture. You can also see that the outlines have the same size, even in a non-uniformly scaled object, and there are no artifacts in the cube.
 
 ![Artifacts2](https://github.com/jocamar/Godot-Post-Process-Outlines/blob/main/addons/jm_pp_outlines/graphics/no_artifacts.png?raw=true)
 
-Post-prossing techniques answer a lot of these shortcomings, but they come with shortcomings of their own as well, such as some loss of control over how things get outlined. It's up to you to choose the best approach for your game. In my case I use a combination of both approaches where some things (e.g planes, pickups, particles, props) use only post-process outlines and some other things like the terrain use both techniques to bring out the most detailed outlines.
+Post-processing techniques answer a lot of these shortcomings, but they come with shortcomings of their own as well, such as some loss of control over how things get outlined. It's up to you to choose the best approach for your game. In my case I use a combination of both approaches where some things (e.g planes, pickups, particles, props) use only post-process outlines and some other things like the terrain use both techniques to bring out the most detailed outlines.
 
 __Note:__ to use both post-process outlines and the front-face culled black mesh outlines together you should probably set the material of the second one to be transparent, so they are not caught in the post process step. Otherwise the post-process outlines will also outline the others, which is probably not what you want as that will give you thicker outlines in these cases.
 
@@ -32,7 +32,7 @@ The `PPOutlinesCamera` and the 3D version of the shader support both color based
 
 __Note:__ You can also use the 2D version of the shader in a 3D game by rendering your 3D scene into a Viewport and applying the shader in the ViewportContainer. You will not get the depth based outlines but you will be able to get outlines around transparent objects, which the 3D shader and the `PPOutlinesCamera` do not do.
 
-Below is an example of the different types of outlines, first just the depth outlines, then the color outlines and finally both combined (I would like to have normal based outlines too, but unfortunately Godot does not give you access to a normals buffer).
+Below is an example of the different types of outlines, first just the depth outlines, then the color outlines and finally both combined (I would like to have normal based outlines too, but unfortunately Godot does not give you access to a normals buffer as of yet).
 
 ![Depth outlines](https://github.com/jocamar/Godot-Post-Process-Outlines/blob/main/addons/jm_pp_outlines/graphics/depth_only.png?raw=true)
 
