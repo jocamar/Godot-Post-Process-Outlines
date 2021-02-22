@@ -16,7 +16,7 @@ Another issue this technique has is that non-uniformly scaled objects will have 
 
 ![Artifacts](https://github.com/jocamar/Godot-Post-Process-Outlines/blob/main/addons/jm_pp_outlines/graphics/uneven_scaling.png?raw=true)
 
-The other big limitation of these kinds of techniques is that they outright are not able to show certain kinds of outlines. For example the outlines around the green portion of the yellow cube in the picture below or around the top face of the cube would not be possible without using a post-processing technique or baking them into a texture.
+The other big limitation of these kinds of techniques is that they outright are not able to show certain kinds of outlines. For example the outlines around the green portion of the yellow cube in the picture below or in the front edges of the cube would not be possible without using a post-processing technique or baking them into a texture.
 
 ![example outlines](https://github.com/jocamar/Godot-Post-Process-Outlines/blob/main/addons/jm_pp_outlines/graphics/example.png?raw=true)
 
