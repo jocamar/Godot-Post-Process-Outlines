@@ -10,7 +10,7 @@ The way I've constantly seen suggested of doing outlines in Godot is usually som
 
 ![Artifacts](https://github.com/jocamar/Godot-Post-Process-Outlines/blob/main/addons/jm_pp_outlines/graphics/artifacts.png?raw=true)
 
-Another issue it has is that non-uniformly scaled objects will have non-uniformly scaled outlines, which can be a problem. Additionally unless care is taken to account for this, objects far away will have smaller outlines that objects close by. This can be a problem if you always want an outline to be visible even when an object is far away.
+Another issue it has is that non-uniformly scaled objects will have non-uniformly scaled outlines, which can be a problem. Additionally unless care is taken to account for this, objects far away will have smaller outlines than objects close by. This can be a problem if you always want an outline to be visible even when an object is far away.
 
 ![Artifacts](https://github.com/jocamar/Godot-Post-Process-Outlines/blob/main/addons/jm_pp_outlines/graphics/uneven_scaling.png?raw=true)
 
