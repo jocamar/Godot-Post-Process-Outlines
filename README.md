@@ -18,7 +18,9 @@ The other main limitation of these kinds of techniques is that they don't allow 
 
 ![Artifacts2](https://github.com/jocamar/Godot-Post-Process-Outlines/blob/main/addons/jm_pp_outlines/graphics/no_artifacts.png?raw=true)
 
-Post-prossing techniques answer a lot of these shortcomings, but they come with shortcomings of their own as well, such as some loss of control over how things get outlined. It's up to you to choose the best approach for your game. In my case I use a combination of both approaches.
+Post-prossing techniques answer a lot of these shortcomings, but they come with shortcomings of their own as well, such as some loss of control over how things get outlined. It's up to you to choose the best approach for your game. In my case I use a combination of both approaches where some things (e.g planes, pickups, particles, props) use only post-process outlines and some other things like the terrain use both techniques to bring out the most detailed outlines.
+
+Note: to use both post-process outlines and the front-face culled black mesh outlines together you should probably set the material of the second one to be transparent, so they are not caught in the post process step. Otherwise the post-process outlines will also outline the others, which is probably not what you want as that will give you thicker outlines in these cases.
 
 ### Post-process Outlines Camera
 
