@@ -1,6 +1,6 @@
 # Godot Post Process Outlines
 
-This is an addon for the Godot Engine that includes two shaders and one custom camera node that allows easy use of post-processing based outlines in both 2D and 3D games (though they are usually used more in 3D games). These are the same shaders and the same approach I'm using to get a large part of the outlines in my own Godot game: Windward Rush, which you can see below (and follow on Twitter for updates: https://twitter.com/joaomarinheiro).
+This is an addon for the Godot Engine that includes two shaders and one custom camera node that allows easy use of post-processing based outlines in both 2D and 3D games (though they are usually used more in 3D games). These are the same shaders and the same approach I'm using to get a large part of the outlines in my own Godot game: __Windward Rush__, which you can see below (and follow on Twitter for updates: https://twitter.com/joaomarinheiro).
 
 ![Game Screenshot](https://github.com/jocamar/Godot-Post-Process-Outlines/blob/main/addons/jm_pp_outlines/graphics/screen2.png?raw=true)
 
@@ -20,7 +20,7 @@ The other main limitation of these kinds of techniques is that they don't allow 
 
 Post-prossing techniques answer a lot of these shortcomings, but they come with shortcomings of their own as well, such as some loss of control over how things get outlined. It's up to you to choose the best approach for your game. In my case I use a combination of both approaches where some things (e.g planes, pickups, particles, props) use only post-process outlines and some other things like the terrain use both techniques to bring out the most detailed outlines.
 
-Note: to use both post-process outlines and the front-face culled black mesh outlines together you should probably set the material of the second one to be transparent, so they are not caught in the post process step. Otherwise the post-process outlines will also outline the others, which is probably not what you want as that will give you thicker outlines in these cases.
+__Note:__ to use both post-process outlines and the front-face culled black mesh outlines together you should probably set the material of the second one to be transparent, so they are not caught in the post process step. Otherwise the post-process outlines will also outline the others, which is probably not what you want as that will give you thicker outlines in these cases.
 
 ### Post-process Outlines Camera
 
@@ -28,7 +28,7 @@ This addon adds a new `PPOutlinesCamera` node to Godot, which uses the shaders b
 
 The `PPOutlinesCamera` and the 3D version of the shader support both color based outlines and depth based outlines, while the 2D version of the shader supports only color based outlines since CanvasItem shaders do not have access to the depth buffer.
 
-Note: You can also use the 2D version of the shader in a 3D game by rendering your 3D scene into a Viewport and applying the shader in the ViewportContainer. You will not get the depth based outlines but you will be able to get outlines around transparent objects, which the 3D shader and the `PPOutlinesCamera` do not do.
+__Note:__ You can also use the 2D version of the shader in a 3D game by rendering your 3D scene into a Viewport and applying the shader in the ViewportContainer. You will not get the depth based outlines but you will be able to get outlines around transparent objects, which the 3D shader and the `PPOutlinesCamera` do not do.
 
 Below is an example of the different types of outlines, first just the depth outlines, then the color outlines and finally both combined (I would like to have normal based outlines too, but unfortunately Godot does not give you access to a normals buffer).
 
