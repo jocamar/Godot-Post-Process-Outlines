@@ -1,6 +1,6 @@
 # Godot Post Process Outlines
 
-This is an addon for the Godot Engine that includes two shaders and one custom camera node that allows easy use of post-processing based outlines in both 2D and 3D games (though they are usually used more in 3D games). These are the same shaders and the same approach I'm using to get a large part of the outlines in my own Godot game: Windward Rush, which you can see below.
+This is an addon for the Godot Engine that includes two shaders and one custom camera node that allows easy use of post-processing based outlines in both 2D and 3D games (though they are usually used more in 3D games). These are the same shaders and the same approach I'm using to get a large part of the outlines in my own Godot game: Windward Rush, which you can see below (and follow on Twitter for updates: https://twitter.com/joaomarinheiro).
 
 ![Game Screenshot](https://github.com/jocamar/Godot-Post-Process-Outlines/blob/main/addons/jm_pp_outlines/graphics/screen2.png?raw=true)
 
