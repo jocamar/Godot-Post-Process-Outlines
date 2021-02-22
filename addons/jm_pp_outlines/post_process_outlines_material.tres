@@ -1,0 +1,18 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[ext_resource path="res://addons/jm_pp_outlines/post_process_outlines.shader" type="Shader" id=1]
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource( 1 )
+shader_param/color_outline_scale = 1.0
+shader_param/depth_outline_scale = 1.0
+shader_param/depth_threshold = 1.0
+shader_param/depth_multiplier = 10000.0
+shader_param/edge_threshold = 0.1
+shader_param/max_edge_alpha = 0.8
+shader_param/edge_alpha_multiplier = 3.0
+shader_param/edge_color = Color( 0, 0, 0, 1 )
+shader_param/depth_use_laplace = true
+shader_param/color_use_laplace = false
+shader_param/use_bg_texture = false
